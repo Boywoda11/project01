@@ -18,7 +18,17 @@ app.get("/galeri", (req, res) => {
     "<img src='https://th.bing.com/th/id/R.636e921d804ef3bb586fca10e5258c89?rik=KZkLHaDogU8e4g&riu=http%3a%2f%2fjustcoolidea.ru%2fwp-content%2fuploads%2f2015%2f11%2fcofe.jpg&ehk=fid%2bSk4ogr%2bYdJogOQS5SKCTOItPkXNl1rDk%2b37992A%3d&risl=&pid=ImgRaw&r=0'>"
   );
 });
-
+app.get("/caridata/:id", (req, res) => {
+  const id = req.params.id;
+  if (id == 0) {
+    res.send("nama:boy");
+  }
+  if (id == 1) {
+    res.send("nama:frento");
+  } else {
+    res.send("data tidak ada");
+  }
+});
 // ini untuk server
 app.listen(port, () => {
   console.log("sistem sudah berjalan");
